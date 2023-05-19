@@ -114,7 +114,7 @@ In this lab, you will use Terraform to import and create multiple VM instances, 
 
 1. In the Cloud Console, go to the **Navigation menu** and select **Compute Engine**.
 2. Click the `tf-instance-1`, then copy the **Instance ID** down somewhere to use later.
-   ![Instance ID](/challenge-labs/GSP345/images/Instance%20ID.png)
+   ![Instance ID](./images/Instance%20ID.png)
 3. In the Cloud Console, go to the **Navigation menu** and select **Compute Engine**.
 4. Do the same thing on previous step, click the `tf-instance-2`, then copy the **Instance ID** down somewhere to use later.
 5. Next, navigate to `modules/instances/instances.tf`. Copy the following configuration into the file.
