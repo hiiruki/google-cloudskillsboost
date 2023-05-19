@@ -78,7 +78,7 @@ git clone https://github.com/googlecodelabs/monolith-to-microservices.git
 
 There's a `setup.sh` script in the root directory of the project that you'll need to run to get your monolith container built up.
 
-```
+``` bash
 cd ~/monolith-to-microservices
 
 ./setup.sh
@@ -122,7 +122,7 @@ Create your cluster as follows:
 - Region: us-central1-a
 - Node count: 3
 
-```
+```bash
 gcloud config set compute/zone us-central1-a
 
 gcloud services enable container.googleapis.com
@@ -140,7 +140,7 @@ Create and expose your deployment as follows:
 - Application port: 8080
 - Externally accessible port: 80
 
-```
+```bash
 kubectl create deployment $MONOLITH_IDENTIFIER --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/${MONOLITH_IDENTIFIER}:1.0.0
 
 kubectl expose deployment $MONOLITH_IDENTIFIER --type=LoadBalancer --port 80 --target-port 8080
@@ -169,7 +169,7 @@ Below is the set of services which need to be containerized. Navigate to the sou
 - Image name: `ORDERS_IDENTIFIER`
 - Image version: 1.0.0
 
-```
+```bash
 cd ~/monolith-to-microservices/microservices/src/orders
 
 gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/${ORDERS_IDENTIFIER}:1.0.0 .
@@ -182,7 +182,7 @@ gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/${ORDERS_IDENTIFIER}:1
 - Image name: `PRODUCTS_IDENTIFIER`
 - Image version: 1.0.0
 
-```
+```bash
 cd ~/monolith-to-microservices/microservices/src/products
 
 gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/${PRODUCTS_IDENTIFIER}:1.0.0 .
@@ -201,7 +201,7 @@ Deploy these new containers following the same process that you followed for the
 - Application port: 8081
 - Externally accessible port: 80
 
-```
+```bash
 kubectl create deployment $ORDERS_IDENTIFIER --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/${ORDERS_IDENTIFIER}:1.0.0
 
 kubectl expose deployment $ORDERS_IDENTIFIER --type=LoadBalancer --port 80 --target-port 8081
@@ -215,7 +215,7 @@ kubectl expose deployment $ORDERS_IDENTIFIER --type=LoadBalancer --port 80 --tar
 - Application port: 8082
 - Externally accessible port: 80
 
-```
+```bash
 kubectl create deployment $PRODUCTS_IDENTIFIER --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/${PRODUCTS_IDENTIFIER}:1.0.0
 
 kubectl expose deployment $PRODUCTS_IDENTIFIER --type=LoadBalancer --port 80 --target-port 8082
@@ -266,21 +266,21 @@ nano .env
 
 When the editor opens, your file should look like this.
 
-```
+```bash
 REACT_APP_ORDERS_URL=http://localhost:8081/api/orders
 REACT_APP_PRODUCTS_URL=http://localhost:8082/api/products
 ```
 
 Replace the `REACT_APP_ORDERS_URL` and `REACT_APP_PRODUCTS_URL` to the new format while replacing with your Orders and Product microservice IP addresses so it matches below.
 
-```
+```bash
 REACT_APP_ORDERS_URL=http://<ORDERS_IP_ADDRESS>/api/orders
 REACT_APP_PRODUCTS_URL=http://<PRODUCTS_IP_ADDRESS>/api/products
 ```
 
 Press **CTRL+O**, press **ENTER**, then **CTRL+X** to save the file in the `nano` editor. Now rebuild the frontend app before containerizing it.
 
-```
+```bash
 npm run build
 ```
 
@@ -309,7 +309,7 @@ Deploy this container following the same process that you followed for the **Ord
 - Application port: 8080
 - Externally accessible port: 80
 
-```
+```bash
 kubectl create deployment $FRONTEND_IDENTIFIER --image=gcr.io/${GOOGLE_CLOUD_PROJECT}/${FRONTEND_IDENTIFIER}:1.0.0
 
 kubectl expose deployment $FRONTEND_IDENTIFIER --type=LoadBalancer --port 80 --target-port 8080
