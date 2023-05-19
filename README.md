@@ -6,6 +6,7 @@ This repository contains the solutions for the Google Cloud Skill Boost challeng
 
 ## Challenge Labs
 - [GSP319](./challenge-labs/GSP319/index.md) Build a Website on Google Cloud
+- [GSP341](./challenge-labs/GSP341/index.md) Create ML Models with BigQuery ML
 - [GSP345](./challenge-labs/GSP345/index.md) Automating Infrastructure on Google Cloud with Terraform
 
 <br>
