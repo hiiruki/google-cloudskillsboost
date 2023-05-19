@@ -1,14 +1,19 @@
-# Automating Infrastructure on Google Cloud with Terraform: Challenge Lab
+# [GSP345] Automating Infrastructure on Google Cloud with Terraform: Challenge Lab
 
 
 ### [GSP345](https://www.cloudskillsboost.google/focuses/42740?parent=catalog)
 
 ![](https://cdn.qwiklabs.com/GMOHykaqmlTHiqEeQXTySaMXYPHeIvaqa2qHEzw6Occ%3D)
 
+---
+
 Time: 1 hour 30 minutes<br>
+Difficulty: Introductory<br>
 Price: 1 Credit
 
-Last updated: May 18, 2023
+Quest: [Automating Infrastructure on Google Cloud with Terraform](https://www.cloudskillsboost.google/quests/159)<br>
+
+Last updated: May 19, 2023
 
 ---
 
@@ -494,7 +499,7 @@ In this lab, you will use Terraform to import and create multiple VM instances, 
     }
     ```
 
-2. Run the following commands to configure the firewall. Type yes at the prompt.
+2. Run the following commands to configure the firewall. Type `yes` at the prompt.
 
     ```bash
     terraform init
