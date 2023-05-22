@@ -56,12 +56,12 @@ from the labs variables, you can copy the value of each variable and paste it in
 
 ![labs variable](./images/labs%20variable.png)
 
-> **Note:** Don't forget to replace the value of each variable with the value of the labs variable
+> **Note**: Don't forget to replace the value of each variable with the value of the labs variable
 
 like this
 ![export variable](./images/export%20variable.png)
 
-> **Note:** Don't forget to enable the API's
+> **Note**: Don't forget to enable the API's
 
 ```bash
 gcloud services enable cloudbuild.googleapis.com
