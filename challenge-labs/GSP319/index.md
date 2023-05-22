@@ -1,6 +1,5 @@
 # [GSP319] Build a Website on Google Cloud: Challenge Lab
 
-
 ### [GSP319](https://www.cloudskillsboost.google/focuses/11765?parent=catalog)
 
 ![](https://cdn.qwiklabs.com/GMOHykaqmlTHiqEeQXTySaMXYPHeIvaqa2qHEzw6Occ%3D)
@@ -13,7 +12,7 @@ Price: 5 Credits
 
 Quest: [Build a Website on Google Cloud](https://www.cloudskillsboost.google/quests/115)<br>
 
-Last updated: May 19, 2023
+Last updated: May 23, 2023
 
 ---
 
@@ -36,7 +35,6 @@ Some FancyStore, Inc. standards you should follow:
 - Allocate cost effective resource sizes. Projects are monitored and excessive resource use will result in the containing project's termination.
 - Use the `n1-standard-1` machine type unless directed otherwise.
 
-
 ## Your challenge
 
 As soon as you sit down at your desk and open your new laptop, you receive the following request to complete these tasks. Good luck!
@@ -50,6 +48,7 @@ export MONOLITH_IDENTIFIER=
 export CLUSTER_NAME=
 export ORDERS_IDENTIFIER=
 export PRODUCTS_IDENTIFIER=
+export FRONTEND_IDENTIFIER=
 ```
 
 from the labs variables, you can copy the value of each variable and paste it in the cloud shell
@@ -187,7 +186,6 @@ cd ~/monolith-to-microservices/microservices/src/products
 
 gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/${PRODUCTS_IDENTIFIER}:1.0.0 .
 ```
-
 
 ## Task 4: Deploy the new microservices
 
