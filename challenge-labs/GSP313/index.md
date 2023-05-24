@@ -58,8 +58,8 @@ Example:
 
 ```bash
 export INSTANCE_NAME=nucleus-jumphost-888
-export ZONE=us-east1-b
-export REGION=us-east1
+export ZONE=us-central1-b
+export REGION=us-central1
 export PORT=8081
 export FIREWALL_NAME=permit-tcp-rule-558
 ```
