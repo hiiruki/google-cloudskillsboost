@@ -46,7 +46,7 @@ export PORT=
 export FIREWALL_NAME=
 ```
 
-![labs variable](./images/labs_variable.png)
+![labs variable](./images/labs_variable.jpg)
 
 You can find the zone in Task 2 description.
 
@@ -57,11 +57,11 @@ Region is just the first part of the zone. For example, if the zone is `us-east1
 Example:
 
 ```bash
-export INSTANCE_NAME=nucleus-jumphost-888
+export INSTANCE_NAME=nucleus-jumphost-295
 export ZONE=us-central1-b
 export REGION=us-central1
-export PORT=8081
-export FIREWALL_NAME=permit-tcp-rule-558
+export PORT=8080
+export FIREWALL_NAME=accept-tcp-rule-633
 ```
 
 ## Task 1. Create a project jumphost instance
