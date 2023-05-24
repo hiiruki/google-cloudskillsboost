@@ -48,9 +48,9 @@ export FIREWALL_NAME=
 
 ![labs variable](./images/labs_variable.png)
 
-The zone descriptions are in the top right corner or checkpoints bar.
+You can find the zone in Task 2 description.
 
-![labs variable 2](./images/labs_variable2.png)
+![zone_variable_task2](./images/zone_variable_task2.jpg)
 
 Region is just the first part of the zone. For example, if the zone is `us-east1-b`, then the region is `us-east1`.
 
