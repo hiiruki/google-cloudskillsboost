@@ -119,7 +119,7 @@ SELECT * FROM (
     GROUP BY subregion1_name
     ORDER BY total_confirmed_cases DESC
 )
-WHERE total_confirmed_cases > <****change death count here****>
+WHERE total_confirmed_cases > <****change confirmed case here****>
 ```
 
 ## Task 4. Fatality ratio
