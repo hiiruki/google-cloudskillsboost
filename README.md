@@ -9,6 +9,7 @@ This repository contains the solutions for the [Google Cloud Skills Boost](https
 - [GSP301](./challenge-labs/GSP301/index.md) Deploy a Compute Instance with a Remote Startup Script
 - [GSP303](./challenge-labs/GSP303/index.md) Configure Secure RDP using a Windows Bastion Host
 - [GSP304](./challenge-labs/GSP304/index.md) Build and Deploy a Docker Image to a Kubernetes Cluster
+- [GSP305](./challenge-labs/GSP305/index.md) Scale Out and Update a Containerized Application on a Kubernetes Cluster
 - [GSP313](./challenge-labs/GSP313/index.md) Create and Manage Cloud Resources
 - [GSP315](./challenge-labs/GSP315/index.md) Perform Foundational Infrastructure Tasks in Google Cloud
 - [GSP319](./challenge-labs/GSP319/index.md) Build a Website on Google Cloud
