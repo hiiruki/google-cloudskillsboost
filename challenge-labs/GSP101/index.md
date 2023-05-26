@@ -40,7 +40,9 @@ Your challenge is to deploy the site in the public cloud by completing the tasks
         ![VM Create](./images/vm_create.png)
 
     - Under **Firewall** check **Allow HTTP traffic**.
+
         ![Firewall](./images/firewall.png)
+
     - Click **Create**.
 
 2. Configure Apache2 Web Server in your instance.
