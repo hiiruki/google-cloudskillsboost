@@ -6,6 +6,7 @@ This repository contains the solutions for the [Google Cloud Skills Boost](https
 
 ## Challenge Labs
 
+- [GSP101](./challenge-labs/GSP101/index.md) Google Cloud Essential Skills
 - [GSP301](./challenge-labs/GSP301/index.md) Deploy a Compute Instance with a Remote Startup Script
 - [GSP303](./challenge-labs/GSP303/index.md) Configure Secure RDP using a Windows Bastion Host
 - [GSP304](./challenge-labs/GSP304/index.md) Build and Deploy a Docker Image to a Kubernetes Cluster
