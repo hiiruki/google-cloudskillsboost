@@ -15,6 +15,7 @@ This repository contains the solutions for the [Google Cloud Skills Boost](https
 - [GSP313](./challenge-labs/GSP313/index.md) Create and Manage Cloud Resources
 - [GSP315](./challenge-labs/GSP315/index.md) Perform Foundational Infrastructure Tasks in Google Cloud
 - [GSP319](./challenge-labs/GSP319/index.md) Build a Website on Google Cloud
+- [GSP322](./challenge-labs/GSP322/index.md) Build and Secure Networks in Google Cloud
 - [GSP341](./challenge-labs/GSP341/index.md) Create ML Models with BigQuery ML
 - [GSP342](./challenge-labs/GSP342/index.md) Ensure Access & Identity in Google Cloud
 - [GSP345](./challenge-labs/GSP345/index.md) Automating Infrastructure on Google Cloud with Terraform
