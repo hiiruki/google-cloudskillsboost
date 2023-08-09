@@ -54,3 +54,11 @@ After firewall creation (Task 3) just wait and then check the score
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/%2FaI3EMiHeGZc46u89ueTTAEgmRSGj5krSwhpzllr88w%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP101/index.md"><= PREV (GSP101)</a>
+    <a style="text-align: right;" href="../GSP303/index.md">NEXT (GSP303) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

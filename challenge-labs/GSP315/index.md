@@ -196,3 +196,11 @@ gcloud pubsub topics create [TOPIC_NAME]
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/Hgcj1JOh2iuL7imDUME0%2BjEemAfZlnOJoEHsVFIVQCY%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP313/index.md"><= PREV (GSP313)</a>
+    <a style="text-align: right;" href="../GSP319/index.md">NEXT (GSP319) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

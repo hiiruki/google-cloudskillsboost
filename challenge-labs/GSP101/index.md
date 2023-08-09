@@ -73,3 +73,10 @@ Your challenge is to deploy the site in the public cloud by completing the tasks
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/Ol0IAaeZbMNmToILKVne%2BkFlHoAu%2BZtH%2BErA8jO7m%2Bc%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: right;" href="../GSP301/index.md">NEXT (GSP301) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

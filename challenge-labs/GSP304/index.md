@@ -63,3 +63,11 @@ With the image prepared you can then create a Kubernetes cluster, then deploy th
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/GOodosAwxciMN42hNV4ZqZIwQ5eXORJcUSvZ2SAuXYI%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP303/index.md"><= PREV (GSP303)</a>
+    <a style="text-align: right;" href="../GSP305/index.md">NEXT (GSP305) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

@@ -510,3 +510,11 @@ In this lab, you will use Terraform to import and create multiple VM instances, 
 ## Congratulations!
 
 ![Badge](https://cdn.qwiklabs.com/RGaT7KirRAjGDJTaOTOuax2BzYId0zvvGTs%2BPpGlcQI%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP342/index.md"><= PREV (GSP342)</a>
+    <a style="text-align: right;" href="../GSP787/index.md">NEXT (GSP787) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

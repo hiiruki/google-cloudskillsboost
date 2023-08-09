@@ -125,3 +125,11 @@ To connect to the secure host, you have to RDP into the bastion host first, and 
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/GOodosAwxciMN42hNV4ZqZIwQ5eXORJcUSvZ2SAuXYI%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP301/index.md"><= PREV (GSP301)</a>
+    <a style="text-align: right;" href="../GSP304/index.md">NEXT (GSP304) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

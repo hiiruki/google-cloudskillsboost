@@ -326,3 +326,11 @@ Wait until you see the external IP address and check the progress.
 ## Congratulations!
 
 ![](https://cdn.qwiklabs.com/tDSBmZi3kH7QdPue8oTiKmR0kVc3UTudveGazkCgmxw%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP315/index.md"><= PREV (GSP315)</a>
+    <a style="text-align: right;" href="../GSP322/index.md">NEXT (GSP322) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

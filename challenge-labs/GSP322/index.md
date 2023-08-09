@@ -138,3 +138,11 @@ Suggested order of actions:
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/e8f4BCFobRlvdqoJ1D%2BHGeJeS9yToL4ZVT3Tg6oeg7Y%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP319/index.md"><= PREV (GSP319)</a>
+    <a style="text-align: right;" href="../GSP341/index.md">NEXT (GSP341) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

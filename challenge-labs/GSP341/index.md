@@ -202,3 +202,11 @@ WHERE
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/XHgD9wRAAlXktQmoNrUOvbg38ZBrazddtSoYHS55d8o%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP322/index.md"><= PREV (GSP322)</a>
+    <a style="text-align: right;" href="../GSP342/index.md">NEXT (GSP342) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

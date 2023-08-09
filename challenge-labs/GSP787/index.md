@@ -419,3 +419,10 @@ GROUP BY date
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/GfiFidoAd%2BrgYQRFgZggxgzMWJsGgFxnfA6bOWScimw%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP345/index.md"><= PREV (GSP345)</a>
+</div>
+<br>
+
+[HOME](../../README.md)

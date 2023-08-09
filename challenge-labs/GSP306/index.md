@@ -147,3 +147,11 @@ To sum it all up, your challenge is to migrate the database to Cloud SQL and the
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/GOodosAwxciMN42hNV4ZqZIwQ5eXORJcUSvZ2SAuXYI%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP305/index.md"><= PREV (GSP305)</a>
+    <a style="text-align: right;" href="../GSP313/index.md">NEXT (GSP313) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

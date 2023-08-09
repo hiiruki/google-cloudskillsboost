@@ -215,3 +215,11 @@ kubectl expose deployment hello-server \
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/%2FaI3EMiHeGZc46u89ueTTAEgmRSGj5krSwhpzllr88w%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP306/index.md"><= PREV (GSP306)</a>
+    <a style="text-align: right;" href="../GSP315/index.md">NEXT (GSP315) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)

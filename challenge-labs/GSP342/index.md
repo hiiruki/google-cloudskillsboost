@@ -182,3 +182,11 @@ kubectl expose deployment hello-server --name orca-hello-service --type LoadBala
 ## Congratulations!
 
 ![Congratulations Badge](https://cdn.qwiklabs.com/H1yrV5fK7wntMMH8epHGm%2FfXhK59czV8mEuoTxFfi2o%3D)
+
+<div style="display: flex; justify-content: space-between;">
+    <a style="text-align: left;" href="../GSP341/index.md"><= PREV (GSP341)</a>
+    <a style="text-align: right;" href="../GSP345/index.md">NEXT (GSP345) =></a>
+</div>
+<br>
+
+[HOME](../../README.md)
