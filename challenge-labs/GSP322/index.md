@@ -29,7 +29,9 @@ export ZONE=
 
 Fill the variables with the values from the lab
 
-For the zone you can use any zone. In my case I used `us-east1-b`
+For the zone you can check first. In the console, click the **Navigation menu** > **Compute Engine** > **VM Instance**. In my case I used `us-east1-b`
+
+![SSH to bastion](./images/vm_instances.png)
 
 To list all available zones:
 
@@ -81,59 +83,61 @@ Suggested order of actions:
 
 1. Check the firewall rules. Remove the overly permissive rules.
 
-    ```bash
-    gcloud compute firewall-rules delete open-access
-    ```
+   ```bash
+   gcloud compute firewall-rules delete open-access
+   ```
 
-    Press `y` and `enter` to confirm.
+   Press `y` and `enter` to confirm.
 
-2. Navigate to Compute Engine in the Cloud Console and identify the bastion host. The instance should be stopped. Start the instance.
+2. Navigate to Compute Engine in the Cloud Console (**Navigation menu** > **Compute Engine** > **VM Instance**) and identify the bastion host. The instance should be stopped. Start the instance.
 
-    ```bash
-    gcloud compute instances start bastion --zone=$ZONE
-    ```
+   ```bash
+   gcloud compute instances start bastion --zone=$ZONE
+   ```
+
+   If you getting **_error_** when run this command, you can manually activate bastion in VM Instance.
 
 3. The bastion host is the one machine authorized to receive external SSH traffic. Create a firewall rule that allows [SSH (tcp/22) from the IAP service](https://cloud.google.com/iap/docs/using-tcp-forwarding). The firewall rule must be enabled for the bastion host instance using a network tag of `SSH_IAP_NETWORK_TAG`.
 
-    ```bash
-    gcloud compute firewall-rules create ssh-ingress --allow=tcp:22 --source-ranges 35.235.240.0/20 --target-tags $IAP_NETWORK_TAG --network acme-vpc
+   ```bash
+   gcloud compute firewall-rules create ssh-ingress --allow=tcp:22 --source-ranges 35.235.240.0/20 --target-tags $IAP_NETWORK_TAG --network acme-vpc
 
-    gcloud compute instances add-tags bastion --tags=$IAP_NETWORK_TAG --zone=$ZONE
-    ```
+   gcloud compute instances add-tags bastion --tags=$IAP_NETWORK_TAG --zone=$ZONE
+   ```
 
 4. The `juice-shop` server serves HTTP traffic. Create a firewall rule that allows traffic on HTTP (tcp/80) to any address. The firewall rule must be enabled for the juice-shop instance using a network tag of `HTTP_NETWORK_TAG`.
 
-    ```bash
-    gcloud compute firewall-rules create http-ingress --allow=tcp:80 --source-ranges 0.0.0.0/0 --target-tags $HTTP_NETWORK_TAG --network acme-vpc
+   ```bash
+   gcloud compute firewall-rules create http-ingress --allow=tcp:80 --source-ranges 0.0.0.0/0 --target-tags $HTTP_NETWORK_TAG --network acme-vpc
 
-    gcloud compute instances add-tags juice-shop --tags=$HTTP_NETWORK_TAG --zone=$ZONE
-    ```
+   gcloud compute instances add-tags juice-shop --tags=$HTTP_NETWORK_TAG --zone=$ZONE
+   ```
 
 5. You need to connect to `juice-shop` from the bastion using SSH. Create a firewall rule that allows traffic on SSH (tcp/22) from `acme-mgmt-subnet` network address. The firewall rule must be enabled for the `juice-shop` instance using a network tag of `SSH_INTERNAL_NETWORK_TAG`.
 
-    ```bash
-    gcloud compute firewall-rules create internal-ssh-ingress --allow=tcp:22 --source-ranges 192.168.10.0/24 --target-tags $INTERNAL_NETWORK_TAG --network acme-vpc
+   ```bash
+   gcloud compute firewall-rules create internal-ssh-ingress --allow=tcp:22 --source-ranges 192.168.10.0/24 --target-tags $INTERNAL_NETWORK_TAG --network acme-vpc
 
-    gcloud compute instances add-tags juice-shop --tags=$INTERNAL_NETWORK_TAG --zone=$ZONE
-    ```
+   gcloud compute instances add-tags juice-shop --tags=$INTERNAL_NETWORK_TAG --zone=$ZONE
+   ```
 
 6. In the Compute Engine instances page, click the SSH button for the **bastion** host.
 
-    ![SSH to bastion](./images/vm_instances.png)
+   ![SSH to bastion](./images/vm_instances.png)
 
-     Once connected, SSH to `juice-shop`.
+   Once connected, SSH to `juice-shop`.
 
-    ```bash
-    gcloud compute ssh juice-shop --internal-ip
-    ```
+   ```bash
+   gcloud compute ssh juice-shop --internal-ip
+   ```
 
-    When prompted `Do you want to continue (Y/n)?`, press `y` and `enter`.
+   When prompted `Do you want to continue (Y/n)?`, press `y` and `enter`.
 
-    Then create a phrase key for the `juice-shop` instance. You can just press `enter` for the empty passphrase.
+   Then create a phrase key for the `juice-shop` instance. You can just press `enter` for the empty passphrase.
 
-    When prompted `Did you mean zone [us-east1-b] for instance: [juice-shop] (Y/n)?`, press `y` and `enter`.
+   When prompted `Did you mean zone [us-east1-b] for instance: [juice-shop] (Y/n)?`, press `y` and `enter`.
 
-    ![SSH to juice-shop](./images/bastion_ssh.png)
+   ![SSH to juice-shop](./images/bastion_ssh.png)
 
 ## Congratulations!
 
