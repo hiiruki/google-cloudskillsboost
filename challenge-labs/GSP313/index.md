@@ -26,7 +26,7 @@ Some Jooli, Inc. standards you should follow:
 
 Create all resources in the default region or zone, unless otherwise directed.
 
-Naming normally uses the format *team-resource*; for example, an instance could be named **nucleus-webserver1**.
+Naming normally uses the format _team-resource_; for example, an instance could be named **nucleus-webserver1**.
 
 Allocate cost-effective resource sizes. Projects are monitored, and excessive resource use will result in the containing project's termination (and possibly yours), so plan carefully. This is the guidance the monitoring team is willing to share: unless directed, use **f1-micro** for small Linux VMs, and use **n1-standard-1** for Windows or other applications, such as Kubernetes nodes.
 
@@ -66,13 +66,16 @@ export FIREWALL_NAME=accept-tcp-rule-633
 
 ## Task 1. Create a project jumphost instance
 
+**_Beware with machine-type, maybe have different with me, dont forget to change_**<br>
+![machine-type](./images/machine-type.png)
+
 Go to cloud shell and run the following command:
 
 ```bash
 gcloud compute instances create $INSTANCE_NAME \
           --network nucleus-vpc \
           --zone $ZONE  \
-          --machine-type f1-micro  \
+          --machine-type e2-micro  \
           --image-family debian-10  \
           --image-project debian-cloud
 ```
@@ -110,98 +113,98 @@ kubectl expose deployment hello-server \
 
 1. Create startup-script.
 
-    ```bash
-    cat << EOF > startup.sh
-    #! /bin/bash
-    apt-get update
-    apt-get install -y nginx
-    service nginx start
-    sed -i -- 's/nginx/Google Cloud Platform - '"\$HOSTNAME"'/' /var/www/html/index.nginx-debian.html
-    EOF
-    ```
+   ```bash
+   cat << EOF > startup.sh
+   #! /bin/bash
+   apt-get update
+   apt-get install -y nginx
+   service nginx start
+   sed -i -- 's/nginx/Google Cloud Platform - '"\$HOSTNAME"'/' /var/www/html/index.nginx-debian.html
+   EOF
+   ```
 
 2. Create instance template.
 
-    ```bash
-    gcloud compute instance-templates create web-server-template \
-    --metadata-from-file startup-script=startup.sh \
-    --network nucleus-vpc \
-    --machine-type g1-small \
-    --region $ZONE
-    ```
+   ```bash
+   gcloud compute instance-templates create web-server-template \
+   --metadata-from-file startup-script=startup.sh \
+   --network nucleus-vpc \
+   --machine-type g1-small \
+   --region $ZONE
+   ```
 
 3. Create target pool.
 
-    ```bash
-    gcloud compute target-pools create nginx-pool --region=$REGION
-    ```
+   ```bash
+   gcloud compute target-pools create nginx-pool --region=$REGION
+   ```
 
 4. Create managed instance group.
 
-    ```bash
-    gcloud compute instance-groups managed create web-server-group \
-    --base-instance-name web-server \
-    --size 2 \
-    --template web-server-template \
-    --region $REGION
-    ```
+   ```bash
+   gcloud compute instance-groups managed create web-server-group \
+   --base-instance-name web-server \
+   --size 2 \
+   --template web-server-template \
+   --region $REGION
+   ```
 
 5. Create firewall rule named as `FIREWALL_RULE` to allow traffic (80/tcp).
 
-    ```bash
-    gcloud compute firewall-rules create $FIREWALL_NAME \
-    --allow tcp:80 \
-    --network nucleus-vpc
-    ```
+   ```bash
+   gcloud compute firewall-rules create $FIREWALL_NAME \
+   --allow tcp:80 \
+   --network nucleus-vpc
+   ```
 
 6. Create health check.
 
-    ```bash
-    gcloud compute http-health-checks create http-basic-check
-    gcloud compute instance-groups managed \
-    set-named-ports web-server-group \
-    --named-ports http:80 \
-    --region $REGION
-    ```
+   ```bash
+   gcloud compute http-health-checks create http-basic-check
+   gcloud compute instance-groups managed \
+   set-named-ports web-server-group \
+   --named-ports http:80 \
+   --region $REGION
+   ```
 
 7. Create backend service, and attach the managed instance group with named port (http:80).
 
-    ```bash
-    gcloud compute backend-services create web-server-backend \
-    --protocol HTTP \
-    --http-health-checks http-basic-check \
-    --global
+   ```bash
+   gcloud compute backend-services create web-server-backend \
+   --protocol HTTP \
+   --http-health-checks http-basic-check \
+   --global
 
-    gcloud compute backend-services add-backend web-server-backend \
-    --instance-group web-server-group \
-    --instance-group-region $REGION \
-    --global
-    ```
+   gcloud compute backend-services add-backend web-server-backend \
+   --instance-group web-server-group \
+   --instance-group-region $REGION \
+   --global
+   ```
 
 8. Create URL map and target the HTTP proxy to route requests to your URL map.
 
-    ```bash
-    gcloud compute url-maps create web-server-map \
-    --default-service web-server-backend
+   ```bash
+   gcloud compute url-maps create web-server-map \
+   --default-service web-server-backend
 
-    gcloud compute target-http-proxies create http-lb-proxy \
-    --url-map web-server-map
-    ```
+   gcloud compute target-http-proxies create http-lb-proxy \
+   --url-map web-server-map
+   ```
 
 9. Create forwarding rule.
 
-    ```bash
-    gcloud compute forwarding-rules create http-content-rule \
-    --global \
-    --target-http-proxy http-lb-proxy \
-    --ports 80
+   ```bash
+   gcloud compute forwarding-rules create http-content-rule \
+   --global \
+   --target-http-proxy http-lb-proxy \
+   --ports 80
 
-    gcloud compute forwarding-rules create $FIREWALL_NAME \
-    --global \
-    --target-http-proxy http-lb-proxy \
-    --ports 80
-    gcloud compute forwarding-rules list
-    ```
+   gcloud compute forwarding-rules create $FIREWALL_NAME \
+   --global \
+   --target-http-proxy http-lb-proxy \
+   --ports 80
+   gcloud compute forwarding-rules list
+   ```
 
 > **Note**: Just wait for the load balancer to finish setting up. It may take a few minutes. If you get an error checkmark, wait a few moments and try again.
 
