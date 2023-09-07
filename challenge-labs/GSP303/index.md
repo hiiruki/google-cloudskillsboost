@@ -1,6 +1,6 @@
 # [GSP303] Configure Secure RDP using a Windows Bastion Host
 
-### [GSP303](https://www.cloudskillsboost.google/focuses/1735?parent=catalog)
+### [GSP303](https://www.cloudskillsboost.google/focuses/1737?parent=catalog)
 
 ![Lab Banner](https://cdn.qwiklabs.com/GMOHykaqmlTHiqEeQXTySaMXYPHeIvaqa2qHEzw6Occ%3D)
 
@@ -12,7 +12,7 @@ Price: 5 Credits
 
 Quest: [Cloud Architecture: Design, Implement, and Manage](https://www.cloudskillsboost.google/quests/124)<br>
 
-Last updated: May 24, 2023
+Last updated: Sep 7, 2023
 
 ---
 
